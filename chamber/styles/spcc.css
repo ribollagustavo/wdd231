@@ -1,4 +1,6 @@
+
 /* ── Reset & Global Variables ── */
+
 *,
 *::before,
 *::after {
@@ -13,16 +15,18 @@
     --secondary: #f5f2ec;
     --surface: #ede9e0;
     --accent: #e8d9a4;
-    --accent-dark: #ff00d4;
+    --accent-dark: #122848;
     --text: #2c2c2a;
     --text-soft: #444;
     --border: #c8c2b4;
     --heading-font: "Montserrat", sans-serif;
     --body-font: "Open Sans", sans-serif;
 }
-.hero-image-section img{
+
+.hero-image-section img {
     border-radius: 10px;
 }
+
 body {
     font-family: var(--body-font);
     background-color: var(--secondary);
@@ -74,7 +78,8 @@ h3 {
     border: 0;
 }
 
-/* ── Isolated Structural Components ── */
+/* ── Header & Navigation ── */
+
 .header-top {
     display: flex;
     align-items: center;
@@ -125,7 +130,7 @@ header nav {
 
 #menu:hover,
 #menu:focus-visible {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--primary-dark);
 }
 
 .nav-links {
@@ -148,16 +153,19 @@ header nav {
 }
 
 .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--primary-dark);
+    color: white;
     text-decoration: none;
 }
 
 .nav-links a[aria-current="page"] {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--primary-dark);
+    color: white;
     border-radius: 4px;
 }
 
 /* ── Content Elements ── */
+
 main {
     max-width: 1000px;
     margin: 1.5rem auto;
@@ -209,6 +217,7 @@ main {
 
 .cta-button:hover {
     background-color: var(--primary-dark);
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -226,9 +235,8 @@ main {
     padding: 0.75rem 1rem;
 }
 
-/* ... Keep all reset, typography, header, and main card styles exactly as they are ... */
-
 /* ── Footer Elements ── */
+
 footer {
     background-color: var(--primary);
     color: var(--accent);
@@ -236,10 +244,8 @@ footer {
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
-    /* Stacked vertically on mobile layout profiles */
     gap: 1.5rem;
     text-align: center;
-    /* Centered default presentation for smaller views */
 }
 
 .footer-left,
@@ -249,7 +255,6 @@ footer {
 }
 
 .footer-right {
-    /* Stays normalized on mobile; overridden to 'right' in large breakpoint file */
     text-align: center;
 }
 
