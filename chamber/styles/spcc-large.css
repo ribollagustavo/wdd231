@@ -1,0 +1,188 @@
+/* ========================================================
+   480px Breakpoint
+========================= */
+@media only screen and (min-width: 30rem) {
+    .cta-button {
+        width: auto;
+    }
+
+    .filter-controls {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Keep form submit button cleanly positioned on wider screens */
+    .join-form input[type="submit"] {
+        width: auto;
+        justify-self: start;
+    }
+    /* NOTE: hover effect intentionally NOT here — must not apply on mobile/small */
+}
+
+/* ========================================================
+   641px Breakpoint — MEDIUM (641px to 1024px)
+   Named grid areas: photo LEFT | name + info RIGHT
+========================= */
+@media only screen and (min-width: 40.0625rem) {
+
+    .hero,
+    .hero-secondary {
+        padding: 2rem;
+    }
+
+    /* 2-column card grid on medium screens */
+    #placesContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Card internal named-area layout: photo on left, name+info on right */
+    .place-card {
+        grid-template-columns: 130px 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "card-photo card-name"
+            "card-photo card-info";
+    }
+
+    .place-card figure {
+        padding: 1rem 0.5rem 1rem 1rem;
+    }
+
+    .place-card img {
+        width: 100%;
+        height: 100%;
+        max-height: 180px;
+    }
+
+    /* Hover effect starts at medium — NOT on mobile */
+    .place-card img:hover {
+        transform: scale(1.04);
+        box-shadow: 0 6px 20px rgba(27, 58, 107, 0.18);
+    }
+
+    fieldset {
+        padding: 2rem;
+    }
+}
+
+/* ========================================================
+   768px Breakpoint (MAIN DESKTOP ENTRY POINT)
+========================= */
+@media only screen and (min-width: 48rem) {
+
+    /* NAV FIX (NO CLS) */
+    #menu {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+
+        /* FIX: override mobile collapse */
+        max-height: none;
+        overflow: visible;
+    }
+
+    .nav-links a {
+        border-bottom: none;
+        border-radius: 4px;
+    }
+
+    .nav-logo img {
+        width: 8rem;
+    }
+
+    /* LAYOUT SLICES */
+    main {
+        padding: 0 2rem;
+    }
+
+    /* Splits page layout into 2 wide columns: Form on Left, Tiers on Right */
+    .grid-container {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: start;
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* HOME GRAPHICS & DIRECTORIES */
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .members-home {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* JOIN PAGE SPECIFIC GRID FIX: */
+    .membership-section {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+    }
+
+    /* ── FOOTER DESKTOP POSITIONING FIX ── */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-right {
+        text-align: right;
+    }
+
+    /* THANK YOU FIX */
+    .thankyou-section {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+    }
+}
+
+/* ========================================================
+   1025px Breakpoint — LARGE (1025px+)
+   Named grid areas: back to stacked (name, photo, info), 3 columns
+========================= */
+@media only screen and (min-width: 64.0625rem) {
+    .hero {
+        padding: 2.5rem 3rem;
+    }
+
+    /* 3-column card grid on large screens */
+    #placesContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* Card internal named-area layout: stacked again, but now 3-up */
+    .place-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "card-name"
+            "card-photo"
+            "card-info";
+    }
+
+    .place-card figure {
+        padding: 0 1rem 0.5rem 1rem;
+    }
+
+    .place-card img {
+        width: 100%;
+        height: 200px;
+        max-height: none;
+    }
+
+    /* Hover effect also on large screens */
+    .place-card img:hover {
+        transform: scale(1.04);
+        box-shadow: 0 6px 20px rgba(27, 58, 107, 0.18);
+    }
+}
