@@ -5,10 +5,9 @@ export function getMembershipLevel(level) {
 }
 
 export function getResponsivePaths(imagePath) {
-    const stem = imagePath.replace(".webp", "");
     return {
-        src1x: `${stem}-1x.webp`,
-        src2x: `${stem}-2x.webp`
+        src1x: imagePath,
+        src2x: imagePath
     };
 }
 export const myInfo = new URLSearchParams(window.location.search);
